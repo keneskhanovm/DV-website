@@ -26,10 +26,162 @@ header h1 { margin: 0 0 0.5rem; color: #fff; }
 
 .subtitle { margin: 0; color: var(--yellow); }
 
+/* Панель навигации (вкладки) */
+.navbar {
+  background-color: #f4f6f9;
+  border-bottom: 2px solid #e0e4eb;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem 0;
+}
+
+.navbar a {
+  font-family: "Roboto Slab", serif;
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px 6px 0 0;
+  border: 2px solid transparent;
+  border-bottom: none;
+  transition: all 0.2s ease;
+}
+
+/* Эффект при наведении */
+.navbar a:hover {
+  background-color: rgba(244, 218, 64, 0.25);
+  color: var(--ink);
+}
+
+/* Стиль для текущей (активной) вкладки */
+.navbar a.active {
+  background-color: #ffffff;
+  color: var(--blue);
+  border-color: #e0e4eb;
+  border-top: 3px solid var(--yellow);
+  margin-bottom: -2px; /* Чтобы вкладка плавно сливалась с белым фоном страницы */
+}
+
+
 main {
-  max-width: 50rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 1rem 1.5rem 3rem;
 }
+/* Общий стиль для заголовков в секциях */
+section h2 { 
+  border-bottom: 3px solid var(--yellow); 
+  padding-bottom: 0.25rem; 
+  margin-top: 0;
+}
 
-section h2 { border-bottom: 3px solid var(--yellow); padding-bottom: 0.25rem; }
+/* Верхний сплит-блок (текст + картинка рядом) */
+#description {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem; /* Аккуратный отступ снизу до следующих блоков */
+}
+
+.text-side {
+  flex: 1;
+  min-width: 280px;
+}
+
+.image-side {
+  flex: 1;
+  min-width: 280px;
+  height: 300px;
+  /* ИСПРАВЛЕН ПУТЬ: теперь картинка корректно откроется и локально, и на GitHub Pages */
+  background-image: url('../images/impactai.png'); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
+
+/* Отступы для блоков, которые идут ниже картинки */
+main > div {
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+}
+
+
+/* Стили для Футера */
+footer {
+  background-color: var(--blue);
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  border-top: 6px solid var(--yellow);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.footer-content strong {
+  color: var(--yellow);
+}
+
+
+
+/* Общие стили для секций с графиками */
+.viz-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Класс для зеркального отображения (картинка/заглушка слева, текст справа) */
+.viz-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.viz-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.viz-text h2 {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 0.25rem;
+  margin-top: 0;
+}
+
+/* Заглушка под будущий график */
+.viz-placeholder {
+  flex: 1;
+  min-width: 280px;
+  height: 280px;
+  background-color: #e2e8f0;
+  border: 2px dashed #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  color: #64748b;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
