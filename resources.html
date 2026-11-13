@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us - Mapping the Impact of AI</title>
+  <title>Resources - Mapping the Impact of AI</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,18 +14,99 @@
   </header>
 
   <nav class="navbar">
-    <a href="index.html" >Main page</a>
-    <a href="about.html" >About the project</a>
+    <a href="index.html">Main page</a>
+    <a href="about.html">About the project</a>
     <a href="resources.html" class="active">Resources</a>
   </nav>
 
   <main>
     <section>
       <h2>Useful resources</h2>
-      <p>limks to our data set </p>
+      <p>Links to the datasets and reports used in our analysis:</p>
+
+      <div class="table-wrapper">
+        <table class="resources-table">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>What it contributes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://ourworldindata.org/how-much-energy-do-data-centers-and-artificial-intelligence-use" target="_blank" rel="noopener">OWID: How much energy do data centers and AI use?</a></td>
+              <td>Main reference. Data centres used about 485 TWh in 2025 (around 1.5% of global electricity), of which AI-focused ones used about 155 TWh, and the IEA base case reaches 945 TWh (3%) in 2030.</td>
+            </tr>
+            <tr>
+              <td><a href="https://archive.ourworldindata.org/20260504-082547/grapher/data-centers-share-electricity-demand.html" target="_blank" rel="noopener">OWID chart: share of electricity demand from data centers</a></td>
+              <td>Downloadable data for the first burden indicator. It combines IEA data centre consumption with Ember total electricity demand.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.iea.org/data-and-statistics/data-product/energy-and-ai" target="_blank" rel="noopener">IEA, Energy and AI</a></td>
+              <td>Regional data centre electricity use and scenarios to 2030. In 2024 the US accounted for 45% of global data centre electricity, China 25% and Europe 15%.</td>
+            </tr>
+            <tr>
+              <td><a href="https://ember-energy.org/data/electricity-data-explorer/" target="_blank" rel="noopener">Ember, Yearly Electricity Data</a></td>
+              <td>Yearly electricity generation, capacity, emissions, imports and demand for over 200 geographies. Gives the denominator and the grid carbon intensity for the CO2 estimate.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.wri.org/aqueduct" target="_blank" rel="noopener">WRI Aqueduct 4.0</a></td>
+              <td>The baseline water stress indicator, comparing total water demand with available renewable supply. Gives water stress by country and region.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.datacentermap.com/" target="_blank" rel="noopener">DataCenterMap</a></td>
+              <td>Number and location of data centres, to match with water stress. Used in a Planet Tracker analysis of data centres and water stress.</td>
+            </tr>
+            <tr>
+              <td><a href="https://news.un.org/en/story/2026/06/1167658" target="_blank" rel="noopener">UN News: AI’s environmental costs</a></td>
+              <td>Summary of the UN University study. AI-related water consumption could equal the basic annual domestic needs of 1.3 billion people by the end of the decade. Useful for context and the “who bears the burden” argument.</td>
+            </tr>
+            <tr>
+              <td><a href="https://joint-research-centre.ec.europa.eu/scientific-activities-z/energy-efficiency/energy-efficiency-products/code-conduct-ict/european-code-conduct-energy-efficiency-data-centres_en" target="_blank" rel="noopener">JRC: EU Code of Conduct for data centres</a> and <a href="https://ec.europa.eu/eurostat" target="_blank" rel="noopener">Eurostat</a></td>
+              <td>Optional European zoom. New EU reporting rules cover energy consumption, water consumption and renewable energy use for data centres. Eurostat gives total electricity demand and the mix.</td>
+            </tr>
+            <tr>
+              <td><a href="https://ourworldindata.org/scaling-up-ai" target="_blank" rel="noopener">OWID: Scaling up AI</a></td>
+              <td>Explains why demand grows. Training compute has doubled roughly every six months since 2010. One context chart for change over time.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
+
+    <section class="concerns-section">
+      <h2>Concerns about data</h2>
+      <ul class="concerns-list">
+        <li>
+          <strong>AI is mixed with other data centre use:</strong> The data does not allow a separate estimate for AI use, so most charts will show “data centres”. The IEA’s AI-focused split (about a third of the total in 2025) can be shown once, at global level.
+        </li>
+        <li>
+          <strong>Sources disagree:</strong> The Energy Institute/S&amp;P estimates about 790 TWh for 2025 (including crypto mining), against the IEA’s 485 TWh. We will use the IEA figures and state why.
+        </li>
+        <li>
+          <strong>Country coverage:</strong> The IEA-based data covers the world, the US, China and large regions (such as Europe, Africa and the Middle East), not every country. A country-level map may need data centre counts instead of electricity.
+        </li>
+        <li>
+          <strong>Water data is weak:</strong> Most data centres do not report their water consumption, and less than a third of operators tracked any water metrics. We will show water stress at data centre locations, not measured water use.
+        </li>
+        <li>
+          <strong>CO2 is estimated, not reported:</strong> We will multiply electricity by the average carbon intensity of the local grid. Company-reported emissions can differ, since offsets and certificates change the accounting. We will state the method on the page.
+        </li>
+        <li>
+          <strong>Location matters:</strong> Country-level data hides large variation within countries, and water supply is mostly local.
+        </li>
+        <li>
+          <strong>Projections are uncertain:</strong> We will show scenario ranges, not one line.
+        </li>
+        <li>
+          <strong>Licensing:</strong> IEA data has usage terms and DataCenterMap is commercial, so we need to check what we can download and republish. Our World in Data and Ember are the safest base.
+        </li>
+      </ul>
+    </section>
+
   </main>
-<footer>
+
+  <footer>
     <div class="footer-content">
       <p>&copy; 2026 <strong>Team Rakuzan</strong> (Kengeskanov Madiyar &amp; Sagymbayeva Gulim). Data Visualization Project.</p>
     </div>
