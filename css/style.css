@@ -2,6 +2,13 @@
   --blue: #002677;
   --yellow: #F4DA40;
   --ink: #25282A;
+  --muted: #8C96A4;
+  --light-bg: #f9f9f9;
+  --border-light: #e0e4eb;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -9,6 +16,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   line-height: 1.6;
   color: var(--ink);
+  background-color: #ffffff;
 }
 
 h1, h2, h3 {
@@ -22,18 +30,28 @@ header {
   border-bottom: 6px solid var(--yellow);
 }
 
-header h1 { margin: 0 0 0.5rem; color: #fff; }
+header h1 {
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 3.8vw, 2.2rem);
+  line-height: 1.25;
+}
 
-.subtitle { margin: 0; color: var(--yellow); }
+.subtitle {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+}
 
-/* Панель навигации (вкладки) */
+/* Navigation bar */
 .navbar {
   background-color: #f4f6f9;
-  border-bottom: 2px solid #e0e4eb;
+  border-bottom: 2px solid var(--border-light);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem 0;
+  gap: 0.35rem;
+  padding: 0.75rem 1rem 0;
 }
 
 .navbar a {
@@ -41,125 +59,94 @@ header h1 { margin: 0 0 0.5rem; color: #fff; }
   text-decoration: none;
   color: var(--blue);
   font-weight: 700;
-  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
   border-radius: 6px 6px 0 0;
   border: 2px solid transparent;
   border-bottom: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Эффект при наведении */
 .navbar a:hover {
   background-color: rgba(244, 218, 64, 0.25);
   color: var(--ink);
 }
 
-/* Стиль для текущей (активной) вкладки */
 .navbar a.active {
   background-color: #ffffff;
   color: var(--blue);
-  border-color: #e0e4eb;
+  border-color: var(--border-light);
   border-top: 3px solid var(--yellow);
-  margin-bottom: -2px; /* Чтобы вкладка плавно сливалась с белым фоном страницы */
+  margin-bottom: -2px;
 }
-
 
 main {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 1rem 1.5rem 3rem;
-}
-/* Общий стиль для заголовков в секциях */
-section h2 { 
-  border-bottom: 3px solid var(--yellow); 
-  padding-bottom: 0.25rem; 
-  margin-top: 0;
+  padding: 1.25rem 1.5rem 3rem;
 }
 
-/* Верхний сплит-блок (текст + картинка рядом) */
+section h2 {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 0.25rem;
+  margin-top: 0;
+  font-size: clamp(1.2rem, 2.8vw, 1.65rem);
+}
+
+.content-box,
+.content-section {
+  background: var(--light-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Top split block on About page */
 #description {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  background: #f9f9f9;
+  background: var(--light-bg);
   padding: 2rem;
   border-radius: 8px;
-  margin-bottom: 2rem; /* Аккуратный отступ снизу до следующих блоков */
+  margin-bottom: 2rem;
 }
 
 .text-side {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 280px;
+  min-width: 0;
 }
 
 .image-side {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 280px;
+  min-width: 0;
   height: 300px;
-  /* ИСПРАВЛЕН ПУТЬ: теперь картинка корректно откроется и локально, и на GitHub Pages */
-  background-image: url('../images/impactai.png'); 
+  background-image: url('../images/impactai.png');
   background-size: cover;
   background-position: center;
   border-radius: 6px;
 }
 
-/* Отступы для блоков, которые идут ниже картинки */
-main > div {
-  margin-bottom: 2rem;
-  background: #f9f9f9;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-}
-
-
-/* Стили для Футера */
-footer {
-  background-color: var(--blue);
-  color: #ffffff;
-  padding: 2rem 1.5rem;
-  border-top: 6px solid var(--yellow);
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.footer-content {
-  max-width: 50rem;
-  margin: 0 auto;
-}
-
-.footer-content p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-  color: #e2e8f0;
-}
-
-.footer-content strong {
-  color: var(--yellow);
-}
-
-
-
-/* Общие стили для секций с графиками */
+/* Visualization cards */
 .viz-section {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  background: #f9f9f9;
+  background: var(--light-bg);
   padding: 2rem;
   border-radius: 8px;
   margin-bottom: 2rem;
 }
 
-/* Класс для зеркального отображения (картинка/заглушка слева, текст справа) */
 .viz-section.reverse {
   flex-direction: row-reverse;
 }
 
 .viz-text {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 280px;
+  min-width: 0;
 }
 
 .viz-text h2 {
@@ -168,10 +155,9 @@ footer {
   margin-top: 0;
 }
 
-/* Заглушка под будущий график */
 .viz-placeholder {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 280px;
+  min-width: 0;
   height: 280px;
   background-color: #e2e8f0;
   border: 2px dashed #cbd5e1;
@@ -186,12 +172,234 @@ footer {
   font-weight: 700;
 }
 
-/* Таблица ресурсов */
+/* Dedicated chart card layout for assignment pages */
+.chart-card {
+  background: var(--light-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.25rem;
+}
+
+.chart-takeaway {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.chart-note {
+  font-size: 0.88rem;
+  color: #525860;
+  margin: 0.75rem 0 0;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.chart-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.swatch-blue { background-color: var(--blue); }
+.swatch-yellow { background-color: var(--yellow); border: 1px solid #c9b024; }
+.swatch-gray { background-color: var(--muted); }
+.swatch-teal { background-color: #1f7a8c; }
+.swatch-slate { background-color: #cbd5e1; }
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.1rem;
+  background-color: var(--blue);
+  color: #ffffff;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 5px;
+  border-bottom: 3px solid var(--yellow);
+  transition: opacity 0.2s ease;
+}
+
+.btn-link:hover {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   SVG SELECTOR RULES (Strictly NO inline styles on SVG)
+   ========================================================= */
+.svg-axis path,
+.svg-axis line {
+  stroke: #cbd5e1;
+  stroke-width: 1px;
+}
+
+.svg-axis text {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 13px;
+  fill: var(--ink);
+}
+
+.svg-grid line {
+  stroke: #eef2f6;
+  stroke-width: 1px;
+}
+
+.svg-grid path {
+  stroke: none;
+}
+
+.svg-label {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+}
+
+.svg-label-bold {
+  font-family: "Roboto Slab", serif;
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--blue);
+}
+
+.svg-label-light {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  fill: #ffffff;
+}
+
+.svg-annotation {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12.5px;
+  fill: #475569;
+}
+
+/* Start-with-gray highlight palette */
+.bar-muted {
+  fill: var(--muted);
+  transition: opacity 0.2s ease;
+}
+
+.bar-highlight {
+  fill: var(--blue);
+  transition: opacity 0.2s ease;
+}
+
+.bar-accent {
+  fill: var(--yellow);
+  stroke: #b59d18;
+  stroke-width: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.bar-teal {
+  fill: #1f7a8c;
+  transition: opacity 0.2s ease;
+}
+
+.bar-muted:hover,
+.bar-highlight:hover,
+.bar-accent:hover,
+.bar-teal:hover {
+  opacity: 0.85;
+}
+
+/* Heatmap sequential blue luminance scale */
+.heat-cell {
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+.heat-0 { fill: #f1f5f9; }
+.heat-1 { fill: #dbeafe; }
+.heat-2 { fill: #93c5fd; }
+.heat-3 { fill: #3b82f6; }
+.heat-4 { fill: #1d4ed8; }
+.heat-5 { fill: #002677; }
+
+/* Waffle cells */
+.waffle-rest { fill: #e2e8f0; }
+.waffle-dc { fill: #64748b; }
+.waffle-ai { fill: var(--blue); }
+
+/* Dumbbell plot */
+.dumbbell-line {
+  stroke: #94a3b8;
+  stroke-width: 3px;
+}
+
+.dumbbell-dot-start {
+  fill: var(--muted);
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.dumbbell-dot-end {
+  fill: var(--blue);
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+/* Interactive Tooltip */
+.viz-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--ink);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-left: 3px solid var(--yellow);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.viz-tooltip.visible {
+  opacity: 1;
+}
+
+/* Resources table */
 .table-wrapper {
   overflow-x: auto;
   margin-top: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #e0e4eb;
+  border: 1px solid var(--border-light);
   background-color: #ffffff;
 }
 
@@ -221,7 +429,7 @@ footer {
 
 .resources-table td {
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid #e0e4eb;
+  border-bottom: 1px solid var(--border-light);
   vertical-align: top;
 }
 
@@ -251,7 +459,7 @@ footer {
   border-bottom-color: var(--blue);
 }
 
-/* Секция: Concerns about data */
+/* Concerns list */
 .concerns-section {
   margin-top: 3rem;
 }
@@ -266,7 +474,7 @@ footer {
 
 .concerns-list li {
   background-color: #f9fafb;
-  border: 1px solid #e0e4eb;
+  border: 1px solid var(--border-light);
   border-left: 4px solid var(--blue);
   border-radius: 6px;
   padding: 1rem 1.25rem;
@@ -282,4 +490,135 @@ footer {
   color: var(--blue);
   font-family: "Roboto Slab", serif;
   font-weight: 700;
+}
+
+/* Footer */
+footer {
+  background-color: var(--blue);
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  border-top: 6px solid var(--yellow);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.footer-content strong {
+  color: var(--yellow);
+}
+
+/* 3x2 Chart-Type Thumbnail Grid for Main Page */
+.idiom-grid {
+  flex: 1 1 300px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.idiom-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--blue);
+  border-radius: 6px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-top-color 0.18s ease;
+}
+
+.idiom-card:hover {
+  transform: translateY(-2px);
+  border-top-color: var(--yellow);
+  box-shadow: 0 5px 12px rgba(0, 38, 119, 0.1);
+}
+
+.idiom-icon {
+  width: 72px;
+  height: 44px;
+  display: block;
+}
+
+.idiom-card span {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.2;
+}
+
+/* =========================================================
+   MOBILE ADAPTATION (<= 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  header {
+    padding: 1.25rem 1rem;
+  }
+
+  .navbar {
+    padding: 0.5rem 0.5rem 0;
+    gap: 0.25rem;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  main {
+    padding: 1rem 0.85rem 2rem;
+  }
+
+  .content-box,
+  .content-section,
+  #description,
+  .viz-section,
+  .chart-card {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .viz-section.reverse {
+    flex-direction: column;
+  }
+
+  .text-side,
+  .image-side,
+  .viz-text,
+  .viz-placeholder,
+  .idiom-card {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .image-side {
+    height: 210px;
+  }
+
+  .chart-container {
+    padding: 0.5rem;
+  }
+
+  .resources-table th,
+  .resources-table td {
+    padding: 0.75rem;
+    font-size: 0.88rem;
+  }
 }

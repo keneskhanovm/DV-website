@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparison - Mapping the Impact of AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>The Environmental Cost of AI: Electricity, Water and Carbon</h1>
+    <p class="subtitle">Team Rakuzan &middot; Kengeskanov Madiyar 9962305, Sagymbayeva Gulim 9956191</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Main page</a>
+    <a href="comparison.html" class="active">Comparison</a>
+    <a href="about.html">About the project</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+
+  <main>
+    <section class="content-box">
+      <h2>Step 1: Comparing Categories</h2>
+      <p>Data centre electricity demand is unevenly distributed across the globe. Below we compare regional consumption, projected 2030 growth, national power grid mixes, and the share of national electricity absorbed by data centres.</p>
+    </section>
+
+    <!-- 1. HORIZONTAL BAR CHART (Mandatory) -->
+    <section class="chart-card">
+      <h2>The United States consumes 45% of global data centre electricity</h2>
+      <p class="chart-takeaway">In 2024, the US alone used 183 TWh&mdash;nearly matching China and Europe combined.</p>
+      <div id="chart-bar" class="chart-container"></div>
+      <p class="chart-note">Source: IEA Energy and AI (2024 regional breakdown, total global demand ~415 TWh in 2024 / ~485 TWh in 2025). Horizontal bars keep regional labels legible on narrow mobile viewports.</p>
+    </section>
+
+    <!-- 2. GROUPED BAR CHART (Mandatory) -->
+    <section class="chart-card">
+      <h2>Global data centre demand is projected to more than double by 2030</h2>
+      <p class="chart-takeaway">Under the IEA Base Case, US demand reaches 425 TWh while China climbs to 275 TWh by 2030.</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-gray"></span> 2024 Actual (TWh)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-blue"></span> 2030 IEA Base Case (TWh)</span>
+      </div>
+      <div id="chart-grouped" class="chart-container"></div>
+      <p class="chart-note">Source: IEA Energy and AI Base Case projections (945 TWh global total in 2030).</p>
+    </section>
+
+    <!-- 3. 100% STACKED BAR CHART (Mandatory) -->
+    <section class="chart-card">
+      <h2>Grid carbon cleanliness varies sharply across major data centre hubs</h2>
+      <p class="chart-takeaway">While Sweden and France run mostly on low-carbon electricity, major hubs in the US and China still rely heavily on fossil fuels.</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-teal"></span> Renewables (%)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-blue"></span> Nuclear (%)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-gray"></span> Fossil Fuels (%)</span>
+      </div>
+      <div id="chart-stacked" class="chart-container"></div>
+      <p class="chart-note">Source: Ember Yearly Electricity Data (2024 electricity generation share by source).</p>
+    </section>
+
+    <!-- 4. HEATMAP (Mandatory) -->
+    <section class="chart-card">
+      <h2>Ireland stands out as an extreme outlier in national grid load</h2>
+      <p class="chart-takeaway">Share of national electricity demand consumed by data centres across key countries (2020&ndash;2025).</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-slate"></span> &lt; 2%</span>
+        <span class="legend-item"><span class="legend-swatch swatch-blue"></span> &gt; 15% of national grid</span>
+      </div>
+      <div id="chart-heatmap" class="chart-container"></div>
+      <p class="chart-note">Source: Our World in Data / IEA / Ember combined burden indicator (% of total domestic electricity demand).</p>
+    </section>
+
+    <!-- 5. WAFFLE CHART (Mandatory) -->
+    <section class="chart-card">
+      <h2>AI-specific workloads represent roughly one-third of data centre power</h2>
+      <p class="chart-takeaway">Each square represents 1% of total global electricity consumption in 2025 (~32,000 TWh total).</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-blue"></span> AI-focused data centres (~0.5% / 155 TWh)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-gray"></span> Traditional data centres (~1.0% / 330 TWh)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-slate"></span> All other global electricity (~98.5%)</span>
+      </div>
+      <div id="chart-waffle" class="chart-container"></div>
+      <p class="chart-note">Source: Our World in Data / IEA (2025 global split: 485 TWh total data centres, ~155 TWh AI-focused).</p>
+    </section>
+
+    <!-- 6. DUMBBELL DOT PLOT (Extra) -->
+    <section class="chart-card">
+      <h2>Data centre share of national electricity surged between 2020 and 2025</h2>
+      <p class="chart-takeaway">Change in data centre electricity share (% of national demand) over five years.</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-gray"></span> 2020 Share (%)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-blue"></span> 2025 Share (%)</span>
+      </div>
+      <div id="chart-dumbbell" class="chart-container"></div>
+      <p class="chart-note">Source: Our World in Data / Ember (2020 vs. 2025 national electricity demand share).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 <strong>Team Rakuzan</strong> (Kengeskanov Madiyar &amp; Sagymbayeva Gulim). Data Visualization Project.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="js/comparison.js"></script>
+</body>
+</html>

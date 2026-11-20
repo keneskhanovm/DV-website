@@ -14,6 +14,7 @@
   </header>
   <nav class="navbar">
     <a href="index.html" class="active">Main page</a>
+    <a href="comparison.html">Comparison</a>
     <a href="about.html">About the project</a>
     <a href="resources.html">Resources</a>
   </nav>
@@ -26,10 +27,80 @@
     <section class="viz-section">
       <div class="viz-text">
         <h2>Comparison</h2>
-        <p>Bar chart of data centre electricity by region, and of estimated CO2 by region.</p>
+        <p>Bar chart, grouped projections, 100% stacked grid mix, national share heatmap, global waffle chart, and dumbbell plot comparing data centre electricity and carbon impact across regions.</p>
+        <a href="comparison.html" class="btn-link">Explore Comparison Charts &rarr;</a>
       </div>
-      <div class="viz-placeholder">
-        <span>our vis</span>
+
+      <div class="idiom-grid" aria-label="Included comparison chart types">
+        <a href="comparison.html#chart-bar" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="6" y="6" width="64" height="8" rx="2" class="bar-highlight"></rect>
+            <rect x="6" y="20" width="38" height="8" rx="2" class="bar-muted"></rect>
+            <rect x="6" y="34" width="22" height="8" rx="2" class="bar-muted"></rect>
+          </svg>
+          <span>Bar Chart</span>
+        </a>
+
+        <a href="comparison.html#chart-grouped" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="12" y="22" width="10" height="20" rx="1.5" class="bar-muted"></rect>
+            <rect x="24" y="8" width="10" height="34" rx="1.5" class="bar-highlight"></rect>
+            <rect x="46" y="28" width="10" height="14" rx="1.5" class="bar-muted"></rect>
+            <rect x="58" y="14" width="10" height="28" rx="1.5" class="bar-highlight"></rect>
+          </svg>
+          <span>Grouped Bar</span>
+        </a>
+
+        <a href="comparison.html#chart-stacked" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="6" y="8" width="32" height="10" class="bar-teal"></rect>
+            <rect x="38" y="8" width="20" height="10" class="bar-highlight"></rect>
+            <rect x="58" y="8" width="16" height="10" class="bar-muted"></rect>
+            <rect x="6" y="28" width="16" height="10" class="bar-teal"></rect>
+            <rect x="22" y="28" width="12" height="10" class="bar-highlight"></rect>
+            <rect x="34" y="28" width="40" height="10" class="bar-muted"></rect>
+          </svg>
+          <span>100% Stacked</span>
+        </a>
+
+        <a href="comparison.html#chart-heatmap" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="14" y="6" width="15" height="15" rx="2" class="heat-5"></rect>
+            <rect x="32" y="6" width="15" height="15" rx="2" class="heat-3"></rect>
+            <rect x="50" y="6" width="15" height="15" rx="2" class="heat-1"></rect>
+            <rect x="14" y="25" width="15" height="15" rx="2" class="heat-4"></rect>
+            <rect x="32" y="25" width="15" height="15" rx="2" class="heat-2"></rect>
+            <rect x="50" y="25" width="15" height="15" rx="2" class="heat-0"></rect>
+          </svg>
+          <span>Heatmap</span>
+        </a>
+
+        <a href="comparison.html#chart-waffle" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="20" y="6" width="10" height="10" rx="1.5" class="waffle-ai"></rect>
+            <rect x="34" y="6" width="10" height="10" rx="1.5" class="waffle-dc"></rect>
+            <rect x="48" y="6" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="20" y="19" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="34" y="19" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="48" y="19" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="20" y="32" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="34" y="32" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+            <rect x="48" y="32" width="10" height="10" rx="1.5" class="waffle-rest"></rect>
+          </svg>
+          <span>Waffle Chart</span>
+        </a>
+
+        <a href="comparison.html#chart-dumbbell" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <line x1="16" y1="14" x2="64" y2="14" class="dumbbell-line"></line>
+            <circle cx="16" cy="14" r="5" class="dumbbell-dot-start"></circle>
+            <circle cx="64" cy="14" r="5" class="dumbbell-dot-end"></circle>
+            <line x1="22" y1="34" x2="48" y2="34" class="dumbbell-line"></line>
+            <circle cx="22" cy="34" r="5" class="dumbbell-dot-start"></circle>
+            <circle cx="48" cy="34" r="5" class="dumbbell-dot-end"></circle>
+          </svg>
+          <span>Dumbbell Plot</span>
+        </a>
       </div>
     </section>
 
@@ -39,7 +110,7 @@
         <p>How the burden is spread: share of national demand taken by data centres, or water stress scores at data centre locations.</p>
       </div>
       <div class="viz-placeholder">
-        <span>vis</span>
+        <span>Upcoming: Distribution</span>
       </div>
     </section>
 
@@ -49,7 +120,7 @@
         <p>Line chart of global and regional consumption from 2020 to 2030 with the IEA scenarios, plus a timeline of key events.</p>
       </div>
       <div class="viz-placeholder">
-        <span>Vis</span>
+        <span>Upcoming: Change over Time</span>
       </div>
     </section>
 
@@ -59,7 +130,7 @@
         <p>Choropleth of water stress or share of electricity demand, with data centre locations on top.</p>
       </div>
       <div class="viz-placeholder">
-        <span>vis</span>
+        <span>Upcoming: Map</span>
       </div>
     </section>
 
@@ -69,7 +140,7 @@
         <p>Icons and key numbers: global share, regional shares, growth rate, and the CO2 estimate. Data centres currently contribute about 1% of global energy-related greenhouse gas emissions and could add 0.4–1.6 GtCO2e by 2035</p>
       </div>
       <div class="viz-placeholder">
-        <span> Vis</span>
+        <span> Upcoming: Infographic</span>
       </div>
     </section>
 
@@ -79,7 +150,7 @@
         <p>Links between companies and the countries where they operate, if the data allows.</p>
       </div>
       <div class="viz-placeholder">
-        <span>vis</span>
+        <span>Upcoming: Network</span>
       </div>
     </section>
   </main>
@@ -91,5 +162,3 @@
   </footer>
 </body>
 </html>
-
-
