@@ -408,22 +408,23 @@ function renderHeatmap() {
     .text(d => d.val.toFixed(1) + "%");
 }
 
+
 // =========================================================
 // 5. WAFFLE CHART (Mandatory)
 // =========================================================
 function renderWaffleChart() {
-  // 100 cells = 100% of global electricity in 2025
-  // Cell 0: AI-focused data centres (~0.5%, rounded to 1 square with half-tone annotation)
-  // Cell 1: Other traditional data centres (~1.0%)
-  // Cells 2..99: All other global electricity (~98.5%)
+  // 100 cells = 100% of global data centre electricity in 2025 (485 TWh)
+  // 32 squares: AI-accelerated servers (~155 TWh)
+  // 46 squares: Traditional cloud & enterprise servers (~223 TWh)
+  // 22 squares: Cooling, storage & network overhead (~107 TWh)
   const cells = d3.range(100).map(i => {
-    let category = "All other global electricity (~98.5%)";
+    let category = "Cooling & infrastructure (22% / ~107 TWh)";
     let cssClass = "waffle-rest";
-    if (i === 0) {
-      category = "AI-focused data centres (~0.5% / 155 TWh)";
+    if (i < 32) {
+      category = "AI-accelerated servers (32% / ~155 TWh)";
       cssClass = "waffle-ai";
-    } else if (i === 1) {
-      category = "Other data centres (~1.0% / 330 TWh)";
+    } else if (i < 78) {
+      category = "Traditional servers (46% / ~223 TWh)";
       cssClass = "waffle-dc";
     }
     return {
@@ -450,7 +451,7 @@ function renderWaffleChart() {
     .attr("viewBox", `0 0 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .attr("role", "img")
-    .attr("aria-label", "10 by 10 waffle chart showing data centres at 1.5 percent of global electricity");
+    .attr("aria-label", "10 by 10 waffle chart showing AI workloads at 32 percent of data centre electricity");
 
   const g = svg.append("g")
     .attr("transform", `translate(${offsetX},${offsetY})`);
@@ -479,34 +480,38 @@ function renderWaffleChart() {
   annot.append("text")
     .attr("class", "svg-label-bold")
     .attr("y", 0)
-    .text("1.5% Total Data Centre Share (2025)");
+    .text("32% AI Share of Data Centre Power (2025)");
 
   annot.append("text")
     .attr("class", "svg-annotation")
     .attr("y", 24)
-    .text("Out of 100 squares representing global electricity:");
+    .text("Out of 485 TWh consumed by data centres globally:");
 
   annot.append("text")
     .attr("class", "svg-annotation")
     .attr("y", 48)
-    .text("• 1st square: AI workloads (~155 TWh, ~0.5%)");
+    .text("\u2022 32 squares: AI training & inference (~155 TWh)");
 
   annot.append("text")
     .attr("class", "svg-annotation")
     .attr("y", 72)
-    .text("• 2nd square: Traditional cloud & web (~330 TWh, ~1.0%)");
+    .text("\u2022 46 squares: Traditional compute & cloud (~223 TWh)");
 
   annot.append("text")
     .attr("class", "svg-annotation")
-    .attr("y", 108)
-    .text("By 2030 (IEA Base Case), the shaded block doubles");
+    .attr("y", 96)
+    .text("\u2022 22 squares: Cooling & power overhead (~107 TWh)");
 
   annot.append("text")
     .attr("class", "svg-annotation")
-    .attr("y", 128)
-    .text("to 3 squares (~3.0% / 945 TWh).");
+    .attr("y", 132)
+    .text("By 2030, AI workloads are projected to expand");
+
+  annot.append("text")
+    .attr("class", "svg-annotation")
+    .attr("y", 152)
+    .text("to nearly 45\u201350% of all data centre demand.");
 }
-
 // =========================================================
 // 6. DUMBBELL DOT PLOT (Extra)
 // =========================================================

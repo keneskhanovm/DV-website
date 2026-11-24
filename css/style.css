@@ -1,8 +1,10 @@
 :root {
   --blue: #002677;
+  --coral: #e04f33;
+  --teal: #1b7f79;
   --yellow: #F4DA40;
   --ink: #25282A;
-  --muted: #8C96A4;
+  --muted: #9aa5b4;
   --light-bg: #f9f9f9;
   --border-light: #e0e4eb;
 }
@@ -232,11 +234,13 @@ section h2 {
   display: inline-block;
 }
 
-.swatch-blue { background-color: var(--blue); }
+/*Colors on Comparison graph*/
+.swatch-blue { background-color: var(--coral); }
+.swatch-navy { background-color: var(--blue); }
 .swatch-yellow { background-color: var(--yellow); border: 1px solid #c9b024; }
 .swatch-gray { background-color: var(--muted); }
-.swatch-teal { background-color: #1f7a8c; }
-.swatch-slate { background-color: #cbd5e1; }
+.swatch-teal { background-color: var(--teal); }
+.swatch-slate { background-color: #e2e8f0; }
 
 .btn-link {
   display: inline-block;
@@ -257,9 +261,7 @@ section h2 {
   opacity: 0.9;
 }
 
-/* =========================================================
-   SVG SELECTOR RULES (Strictly NO inline styles on SVG)
-   ========================================================= */
+/* SVG SELECTOR RULES (Strictly NO inline styles on SVG) */
 .svg-axis path,
 .svg-axis line {
   stroke: #cbd5e1;
@@ -292,7 +294,7 @@ section h2 {
   font-family: "Roboto Slab", serif;
   font-size: 13px;
   font-weight: 700;
-  fill: var(--blue);
+  fill: var(--coral);
 }
 
 .svg-label-light {
@@ -308,14 +310,14 @@ section h2 {
   fill: #475569;
 }
 
-/* Start-with-gray highlight palette */
+/* Start-with-gray + Coral focal accent */
 .bar-muted {
   fill: var(--muted);
   transition: opacity 0.2s ease;
 }
 
 .bar-highlight {
-  fill: var(--blue);
+  fill: var(--coral);
   transition: opacity 0.2s ease;
 }
 
@@ -327,7 +329,7 @@ section h2 {
 }
 
 .bar-teal {
-  fill: #1f7a8c;
+  fill: var(--teal);
   transition: opacity 0.2s ease;
 }
 
@@ -338,41 +340,40 @@ section h2 {
   opacity: 0.85;
 }
 
-/* Heatmap sequential blue luminance scale */
+/* Heatmap sequential warm luminance scale */
 .heat-cell {
   stroke: #ffffff;
   stroke-width: 2px;
 }
 .heat-0 { fill: #f1f5f9; }
-.heat-1 { fill: #dbeafe; }
-.heat-2 { fill: #93c5fd; }
-.heat-3 { fill: #3b82f6; }
-.heat-4 { fill: #1d4ed8; }
-.heat-5 { fill: #002677; }
+.heat-1 { fill: #fde8df; }
+.heat-2 { fill: #f8b49d; }
+.heat-3 { fill: #eb6b4d; }
+.heat-4 { fill: #c4361d; }
+.heat-5 { fill: #7f1d12; }
 
 /* Waffle cells */
 .waffle-rest { fill: #e2e8f0; }
-.waffle-dc { fill: #64748b; }
-.waffle-ai { fill: var(--blue); }
+.waffle-dc { fill: var(--blue); }
+.waffle-ai { fill: var(--coral); }
 
 /* Dumbbell plot */
 .dumbbell-line {
-  stroke: #94a3b8;
+  stroke: #64748b;
   stroke-width: 3px;
 }
 
 .dumbbell-dot-start {
-  fill: var(--muted);
-  stroke: #ffffff;
-  stroke-width: 2px;
-}
-
-.dumbbell-dot-end {
   fill: var(--blue);
   stroke: #ffffff;
   stroke-width: 2px;
 }
 
+.dumbbell-dot-end {
+  fill: var(--coral);
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
 /* Interactive Tooltip */
 .viz-tooltip {
   position: absolute;
