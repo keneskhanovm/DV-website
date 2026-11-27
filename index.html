@@ -15,6 +15,7 @@
   <nav class="navbar">
     <a href="index.html" class="active">Main page</a>
     <a href="comparison.html">Comparison</a>
+    <a href="distribution.html">Distribution and Time</a>
     <a href="about.html">About the project</a>
     <a href="resources.html">Resources</a>
   </nav>
@@ -105,11 +106,68 @@
 
     <section class="viz-section reverse">
       <div class="viz-text">
-        <h2>Distribution</h2>
-        <p>How the burden is spread: share of national demand taken by data centres, or water stress scores at data centre locations.</p>
+        <h2>Distribution and Time</h2>
+        <p>Forecast cone (2015&ndash;2035), 100% stacked workload area, climate WUE boxplot with jitter, hyperscale PUE violin plot, AI model emissions beeswarm, and grid carbon ridgeline plot.</p>
+        <a href="distribution.html" class="btn-link">Explore Distributions &rarr;</a>
       </div>
-      <div class="viz-placeholder">
-        <span>Upcoming: Distribution</span>
+
+      <div class="idiom-grid" aria-label="Included temporal and distribution chart types">
+        <a href="distribution.html#chart-line-fan" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <polygon points="44,24 72,8 72,34" class="fan-area"></polygon>
+            <polyline points="8,38 26,34 44,24" class="line-navy"></polyline>
+            <polyline points="44,24 72,21" class="line-coral-dashed"></polyline>
+          </svg>
+          <span>Line + Fan</span>
+        </a>
+
+        <a href="distribution.html#chart-stacked-area" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <rect x="8" y="8" width="64" height="32" class="area-muted"></rect>
+            <polygon points="8,18 40,22 72,26 72,40 8,40" class="area-navy"></polygon>
+            <polygon points="8,36 40,30 72,22 72,40 8,40" class="area-coral"></polygon>
+          </svg>
+          <span>Stacked Area</span>
+        </a>
+
+        <a href="distribution.html#chart-boxplot" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <line x1="24" y1="10" x2="24" y2="38" class="boxplot-whisker"></line>
+            <rect x="16" y="18" width="16" height="12" class="boxplot-box-navy"></rect>
+            <line x1="56" y1="6" x2="56" y2="34" class="boxplot-whisker"></line>
+            <rect x="48" y="12" width="16" height="14" class="boxplot-box-coral"></rect>
+          </svg>
+          <span>Boxplot</span>
+        </a>
+
+        <a href="distribution.html#chart-violin" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <ellipse cx="24" cy="24" rx="9" ry="16" class="violin-coral"></ellipse>
+            <ellipse cx="56" cy="24" rx="11" ry="15" class="violin-navy"></ellipse>
+          </svg>
+          <span>Violin Plot</span>
+        </a>
+
+        <a href="distribution.html#chart-beeswarm" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <circle cx="16" cy="24" r="3.5" class="bee-dot-navy"></circle>
+            <circle cx="28" cy="19" r="3.5" class="bee-dot-navy"></circle>
+            <circle cx="28" cy="29" r="3.5" class="bee-dot-navy"></circle>
+            <circle cx="42" cy="24" r="4" class="bee-dot-coral"></circle>
+            <circle cx="56" cy="18" r="4" class="bee-dot-coral"></circle>
+            <circle cx="64" cy="27" r="4" class="bee-dot-coral"></circle>
+          </svg>
+          <span>Beeswarm</span>
+        </a>
+
+        <a href="distribution.html#chart-ridgeline" class="idiom-card">
+          <svg viewBox="0 0 80 48" class="idiom-icon" aria-hidden="true">
+            <path d="M10,20 Q35,6 70,20 Z" class="ridge-navy"></path>
+            <path d="M10,30 Q32,16 70,30 Z" class="ridge-navy"></path>
+            <path d="M10,40 Q28,24 70,40 Z" class="ridge-coral"></path>
+          </svg>
+          <span>Ridgeline</span>
+        </a>
       </div>
     </section>
 

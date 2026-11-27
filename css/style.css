@@ -81,7 +81,9 @@ header h1 {
   border-top: 3px solid var(--yellow);
   margin-bottom: -2px;
 }
+/* ============================================== */
 
+/* Main content area */
 main {
   max-width: 80rem;
   margin: 0 auto;
@@ -261,7 +263,7 @@ section h2 {
   opacity: 0.9;
 }
 
-/* SVG SELECTOR RULES (Strictly NO inline styles on SVG) */
+/* SVG styles */
 .svg-axis path,
 .svg-axis line {
   stroke: #cbd5e1;
@@ -374,6 +376,142 @@ section h2 {
   stroke: #ffffff;
   stroke-width: 2px;
 }
+/*updated 27 Nov*/
+/* distirbution svg class  */
+.swatch-navy { background-color: var(--blue); }
+.swatch-coral-soft { background-color: rgba(224, 79, 51, 0.25); border: 1px solid var(--coral); }
+
+.ref-line-dashed {
+  stroke: #94a3b8;
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 4;
+}
+
+.fan-area {
+  fill: rgba(224, 79, 51, 0.16);
+}
+
+.line-navy {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 3px;
+}
+
+.line-coral-dashed {
+  fill: none;
+  stroke: var(--coral);
+  stroke-width: 3px;
+  stroke-dasharray: 6 4;
+}
+
+.dot-navy {
+  fill: var(--blue);
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+.dot-coral {
+  fill: var(--coral);
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+/* Stacked area */
+.area-coral { fill: rgba(224, 79, 51, 0.85); }
+.area-navy { fill: rgba(0, 38, 119, 0.82); }
+.area-muted { fill: rgba(154, 165, 180, 0.75); }
+
+/* Boxplot */
+.boxplot-whisker {
+  stroke: var(--ink);
+  stroke-width: 1.8px;
+}
+
+.boxplot-box-navy {
+  fill: rgba(0, 38, 119, 0.22);
+  stroke: var(--blue);
+  stroke-width: 2px;
+}
+
+.boxplot-box-coral {
+  fill: rgba(224, 79, 51, 0.25);
+  stroke: var(--coral);
+  stroke-width: 2px;
+}
+
+.boxplot-median {
+  stroke: var(--ink);
+  stroke-width: 3px;
+}
+
+.jitter-dot {
+  fill: var(--ink);
+  opacity: 0.65;
+}
+
+/* Violin plot */
+.violin-navy {
+  fill: rgba(0, 38, 119, 0.25);
+  stroke: var(--blue);
+  stroke-width: 2px;
+}
+
+.violin-coral {
+  fill: rgba(224, 79, 51, 0.28);
+  stroke: var(--coral);
+  stroke-width: 2px;
+}
+
+.violin-spine {
+  stroke: var(--ink);
+  stroke-width: 1.5px;
+}
+
+.violin-iqr {
+  fill: var(--ink);
+}
+
+.violin-median-dot {
+  fill: #ffffff;
+  stroke: var(--ink);
+  stroke-width: 2px;
+}
+
+/* Beeswarm plot */
+.bee-dot-navy {
+  fill: var(--blue);
+  opacity: 0.78;
+  stroke: #ffffff;
+  stroke-width: 1.2px;
+}
+
+.bee-dot-coral {
+  fill: var(--coral);
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+/* Ridgeline plot */
+.ridge-navy {
+  fill: rgba(0, 38, 119, 0.28);
+  stroke: var(--blue);
+  stroke-width: 1.8px;
+  transition: opacity 0.2s ease;
+}
+
+.ridge-coral {
+  fill: rgba(224, 79, 51, 0.42);
+  stroke: var(--coral);
+  stroke-width: 2.2px;
+  transition: opacity 0.2s ease;
+}
+
+.ridge-navy:hover,
+.ridge-coral:hover {
+  opacity: 0.85;
+}
+/*until here*/ 
+
 /* Interactive Tooltip */
 .viz-tooltip {
   position: absolute;

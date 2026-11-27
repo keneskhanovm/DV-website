@@ -1,6 +1,3 @@
-// D3.js v7 visualizations for Step 1: Comparing Categories
-// Strict adherence to course SVG rule: NO inline style attributes; all styling via CSS classes.
-
 document.addEventListener("DOMContentLoaded", () => {
   renderHorizontalBarChart();
   renderGroupedBarChart();
@@ -25,9 +22,7 @@ function positionTooltip(tooltip, event, container) {
     .style("top", Math.max(8, y - 42) + "px");
 }
 
-// =========================================================
-// 1. HORIZONTAL BAR CHART (Mandatory)
-// =========================================================
+// 1. horizontal bar chart 
 function renderHorizontalBarChart() {
   const data = [
     { region: "United States", twh: 183, share: "45%", highlight: true },
@@ -110,9 +105,7 @@ function renderHorizontalBarChart() {
     .text(d => `${d.twh} TWh (${d.share})`);
 }
 
-// =========================================================
-// 2. GROUPED BAR CHART (Mandatory)
-// =========================================================
+// 2. grouped bar chart
 function renderGroupedBarChart() {
   const data = [
     { region: "United States", y2024: 183, y2030: 425 },
@@ -204,9 +197,7 @@ function renderGroupedBarChart() {
     .text(d => d.value);
 }
 
-// =========================================================
-// 3. 100% STACKED BAR CHART (Mandatory)
-// =========================================================
+// 3. stacked 100% bar chart
 function renderStacked100BarChart() {
   const data = [
     { country: "Sweden", renewables: 69, nuclear: 29, fossil: 2 },
@@ -288,9 +279,7 @@ function renderStacked100BarChart() {
     .text(d => (d[1] - d[0]) >= 12 ? `${d[1] - d[0]}%` : "");
 }
 
-// =========================================================
-// 4. HEATMAP (Mandatory)
-// =========================================================
+// 4. heatmap
 function renderHeatmap() {
   const countries = ["Ireland", "Singapore", "Netherlands", "United States", "Germany", "China"];
   const years = ["2020", "2021", "2022", "2023", "2024", "2025"];
@@ -409,9 +398,7 @@ function renderHeatmap() {
 }
 
 
-// =========================================================
-// 5. WAFFLE CHART (Mandatory)
-// =========================================================
+// 5. waffle chart
 function renderWaffleChart() {
   // 100 cells = 100% of global data centre electricity in 2025 (485 TWh)
   // 32 squares: AI-accelerated servers (~155 TWh)
@@ -512,9 +499,7 @@ function renderWaffleChart() {
     .attr("y", 152)
     .text("to nearly 45\u201350% of all data centre demand.");
 }
-// =========================================================
-// 6. DUMBBELL DOT PLOT (Extra)
-// =========================================================
+// 6.dumbbell dot plot
 function renderDumbbellPlot() {
   const data = [
     { country: "Ireland", y2020: 11.2, y2025: 23.0 },

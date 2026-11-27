@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distributions and Time - Mapping the Impact of AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>The Environmental Cost of AI: Electricity, Water and Carbon</h1>
+    <p class="subtitle">Team Rakuzan &middot; Kengeskanov Madiyar 9962305, Sagymbayeva Gulim 9956191</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Main page</a>
+    <a href="comparison.html">Comparison</a>
+    <a href="distribution.html" class="active">Distributions and Time</a>
+    <a href="about.html">About the project</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+
+  <main>
+    <section class="content-box">
+      <h2>Step 2:Distributions and Time</h2>
+      <p class="chart-takeaway">Tracking how AI infrastructure demand accelerates over time and how efficiency, water, and carbon metrics vary across facilities and regions.</p>
+      <p>Averages alone hide extreme local impacts. Below we examine both time-dependent trajectories (2015&ndash;2035 projections and shifting workload shares) and full statistical distributions across data centres, AI models, and power grids.</p>
+    </section>
+
+    <!-- 1. LINE CHART + CONFIDENCE FAN -->
+    <section class="chart-card">
+      <h2>Global data centre electricity demand could exceed 1,300 TWh by 2035</h2>
+      <p class="chart-takeaway">Historical demand (2015&ndash;2024) and IEA scenario uncertainty cone (2025&ndash;2035) comparing Base Case, High AI Growth, and Efficiency trajectories.</p>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-swatch swatch-navy"></span> Historical Actual (2015&ndash;2024)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-coral"></span> IEA Base Case Projection</span>
+        <span class="legend-item"><span class="legend-swatch swatch-coral-soft"></span> High AI / Efficiency Uncertainty Range</span>
+      </div>
+      <div id="chart-line-fan" class="chart-container"></div>
+      <p class="chart-note">Source: IEA Energy and AI Report (historical estimates and 2025&ndash;2035 scenario range in TWh).</p>
+    </section>
+
+    <!-- 2. 100% STACKED AREA CHART -->
+    <section class="chart-card">
+      <h2>AI servers are rapidly overtaking traditional workloads inside data centres</h2>
+      <p class="chart-takeaway">Evolution of global data centre electricity share by workload category (2018&ndash;2030).</p>
+      <div id="chart-stacked-area" class="chart-container"></div>
+      <p class="chart-note">Source: IEA / SemiAnalysis / Our World in Data workload decomposition (% of total data centre electricity).</p>
+    </section>
+
+    <!-- 3. BOXPLOT  -->
+    <section class="chart-card">
+      <h2>Hot climates multiply data centre water intensity more than threefold</h2>
+      <p class="chart-takeaway">Distribution of Water Usage Effectiveness (WUE, litres per kWh) across 60 monitored facilities by climate zone, showing median, IQR, and individual facilities.</p>
+      <div id="chart-boxplot" class="chart-container"></div>
+      <p class="chart-note">Source: Lawrence Berkeley National Laboratory / Uptime Institute regional WUE benchmarks (L/kWh).</p>
+    </section>
+
+    <!-- 4. VIOLIN PLOT  -->
+    <section class="chart-card">
+      <h2>Hyperscale AI facilities cluster near 1.15 PUE while legacy centres lag behind</h2>
+      <p class="chart-takeaway">Distribution of energy efficiency (PUE) comparing modern Hyperscale Cloud centres against older Enterprise facilities.</p>
+      <p class="chart-note">Power Usage Effectiveness - PUE</p>
+      <div id="chart-violin" class="chart-container"></div>
+      <p class="chart-note">Source: Uptime Institute Global Data Center Survey &amp; Hyperscale Sustainability Reports (1.0 = ideal efficiency).</p>
+    </section>
+
+    <!-- 5. BEESWARM PLOT  -->
+    <section class="chart-card">
+      <h2>Frontier foundation models push training emissions into thousands of tonnes</h2>
+      <p class="chart-takeaway">Distribution of estimated training carbon footprint (tCO2e) across 29 notable AI models (2019&ndash;2025), highlighting key frontier releases.</p>
+      <div id="chart-beeswarm" class="chart-container"></div>
+      <p class="chart-note">Source: Epoch AI &amp; Stanford AI Index (estimated training CO2-equivalent emissions, logarithmic scale).</p>
+    </section>
+
+    <!-- 6. RIDGELINE PLOT  -->
+    <section class="chart-card">
+      <h2>Power grids are decarbonizing slowly while a high-carbon tail persists</h2>
+      <p class="chart-takeaway">Ridgeline plot tracking how the distribution of grid carbon intensity (gCO2/kWh) across 40 major data centre hubs shifted from 2018 to 2025.</p>
+      <div id="chart-ridgeline" class="chart-container"></div>
+      <p class="chart-note">Source: Ember Yearly Electricity Data (distribution of carbon intensity across major global cloud regions, 2018&ndash;2025).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 <strong>Team Rakuzan</strong> (Kengeskanov Madiyar &amp; Sagymbayeva Gulim). Data Visualization Project.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="js/distribution.js"></script>
+</body>
+</html>
